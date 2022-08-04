@@ -8,9 +8,7 @@ defmodule ExMon.Game.Acctions.Attack do
     damage = calculate_power(move)
 
     opponent
-    |> IO.inspect()
     |> Game.fetch_player()
-    |> IO.inspect()
     |> Map.get(:life)
     |> calculate_total_life(damage)
     |> update_opponent_life(opponent)
@@ -26,5 +24,12 @@ defmodule ExMon.Game.Acctions.Attack do
     opponent
     |> Game.fetch_player()
     |> Map.put(:life, life)
+    |> update_game(opponent)
+  end
+
+  defp update_game(player, opponent) do
+    Game.info()
+    |> Map.put(opponent, player)
+    |> Game.update()
   end
 end
