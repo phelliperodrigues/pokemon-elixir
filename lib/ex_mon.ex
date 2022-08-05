@@ -3,8 +3,8 @@ defmodule ExMon do
   alias ExMon.Game.{Acctions, Status}
 
   @computer_name "Robotnik"
-  def create_player(name, move_avg, move_heal, move_rnd) do
-    Player.build(name, move_avg, move_heal, move_rnd)
+  def create_player(name, move_avg, move_rnd, move_heal) do
+    Player.build(name, move_avg, move_rnd, move_heal)
   end
 
   def start_game(player) do
@@ -25,7 +25,7 @@ defmodule ExMon do
 
   defp do_move({:ok, move}) do
     case move do
-      :move_heal -> "realiza_cura"
+      :move_heal -> Acctions.heal()
       _ -> Acctions.attack(move)
     end
 
