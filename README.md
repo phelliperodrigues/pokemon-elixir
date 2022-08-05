@@ -1,5 +1,7 @@
 # ExMon :computer:
 
+![](https://raw.githubusercontent.com/phelliperodrigues/pokemon-elixir/main/img/ExMon.gif)
+
 ## Explicação do Jogo :space_invader:
 
 -   Jogo baseado em turnos onde teremos um player contra o
