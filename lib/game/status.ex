@@ -1,6 +1,4 @@
 defmodule ExMon.Game.Status do
-  alias ExMon.Game
-
   def print_round_message(%{status: :started} = info) do
     IO.puts("\n======= The game is started =======\n")
     IO.inspect(info)
@@ -33,5 +31,18 @@ defmodule ExMon.Game.Status do
 
   def print_move_message(player, :heal, life) do
     IO.puts("\n======= The #{player} healed itself to #{life} life points. =======\n")
+  end
+
+  def wait_computer_move_message() do
+    IO.puts("\n======= Wait for computer movement. =======\n")
+    IO.write(".")
+    :timer.sleep(1000)
+    IO.write(".")
+    :timer.sleep(1000)
+    IO.write(".")
+    :timer.sleep(1000)
+    IO.write(".")
+    :timer.sleep(1000)
+    IO.write(".")
   end
 end
